@@ -40,7 +40,7 @@ export default function LoadsPage() {
     <div className="flex flex-col h-full">
       <FilterBar filters={filters} onChange={setFilters} />
 
-      <div className="flex-1 px-4 py-3 space-y-3 overflow-auto nice-scroll">
+      <div className="flex-1 py-3 space-y-3 overflow-auto nice-scroll">
         {isLoading ? (
           <div className="space-y-3">
             {Array.from({ length: 4 }).map((_, i) => (
@@ -100,17 +100,19 @@ export default function LoadsPage() {
             </div>
 
             <AnimatePresence>
-              {ranked.map((load, idx) => (
-                <motion.div
-                  key={load.id}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ delay: Math.min(idx * 0.04, 0.4) }}
-                >
-                  <LoadCard load={load} matchScore={load._score} />
-                </motion.div>
-              ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 lg:gap-4">
+                {ranked.map((load, idx) => (
+                  <motion.div
+                    key={load.id}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ delay: Math.min(idx * 0.04, 0.4) }}
+                  >
+                    <LoadCard load={load} matchScore={load._score} />
+                  </motion.div>
+                ))}
+              </div>
             </AnimatePresence>
           </>
         )}

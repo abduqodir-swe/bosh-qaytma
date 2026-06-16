@@ -51,7 +51,7 @@ export default function ChatsListPage() {
   }
 
   return (
-    <div className="px-4 py-4 pb-24">
+    <div className="px-4 lg:px-0 py-4 pb-24 lg:pb-0">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="text-xl font-extrabold text-foreground">Xabarlar</h2>

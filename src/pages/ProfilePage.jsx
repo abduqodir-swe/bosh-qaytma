@@ -132,7 +132,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="px-4 py-4 space-y-4">
+    <div className="px-4 lg:px-0 py-4 space-y-4">
       {/* Profile header card */}
       <motion.div
         initial={{ y: 12, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
@@ -163,7 +163,7 @@ export default function ProfilePage() {
       </motion.div>
 
       {/* Quick stats */}
-      <div className="grid grid-cols-3 gap-2.5">
+      <div className="grid grid-cols-3 lg:grid-cols-3 gap-2.5">
         <div className="stat-card">
           <div className="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600">
             <Icon name="star" size="md" />

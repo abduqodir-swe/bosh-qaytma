@@ -119,7 +119,7 @@ export default function LoadDetailPage() {
       </div>
 
       {/* Content */}
-      <div className="px-4 -mt-5 space-y-3 pb-32 relative z-10">
+      <div className="px-4 lg:px-0 -mt-5 space-y-3 pb-32 lg:pb-0 relative z-10 lg:grid lg:grid-cols-3 lg:gap-4">
         {/* Price card */}
         <motion.div
           initial={{ y: 12, opacity: 0 }}
@@ -206,53 +206,56 @@ export default function LoadDetailPage() {
           </motion.div>
         )}
 
-        {/* Contact */}
-        <motion.div
-          initial={{ y: 12, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="bg-card border border-border rounded-2xl p-4 shadow-sm"
-        >
-          <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-1">
-            <Icon name="userTie" size="xs" /> Aloqa
-          </p>
-          {load.contact_name && (
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-blue-700 flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-primary/30">
-                {load.contact_name.charAt(0).toUpperCase()}
+        {/* Contact — sidebar on desktop, full-width on mobile */}
+        <div className="lg:col-start-3 lg:row-start-2 lg:row-span-2 lg:sticky lg:top-4 lg:self-start space-y-3">
+          <motion.div
+            initial={{ y: 12, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="bg-card border border-border rounded-2xl p-4 shadow-sm"
+          >
+            <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-1">
+              <Icon name="userTie" size="xs" /> Aloqa
+            </p>
+            {load.contact_name && (
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-blue-700 flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-primary/30">
+                  {load.contact_name.charAt(0).toUpperCase()}
+                </div>
+                <div>
+                  <p className="font-bold text-foreground">{load.contact_name}</p>
+                  <p className="text-[10px] text-muted-foreground">Yuk egasi</p>
+                </div>
               </div>
-              <div>
-                <p className="font-bold text-foreground">{load.contact_name}</p>
-                <p className="text-[10px] text-muted-foreground">Yuk egasi</p>
-              </div>
-            </div>
-          )}
-          <div className="grid grid-cols-2 gap-2">
-            <a href={`tel:${load.contact_phone}`} className="contents">
-              <Button className="w-full gap-2 rounded-xl h-11" variant="outline">
-                <Icon name="phoneVolume" size="sm" className="text-primary" />
-                <span className="text-xs font-bold truncate">{load.contact_phone}</span>
-              </Button>
-            </a>
-            {load.telegram ? (
-              <a href={`https://t.me/${load.telegram.replace("@", "")}`} target="_blank" rel="noreferrer" className="contents">
-                <Button className="w-full gap-2 rounded-xl h-11 bg-[#229ED9] hover:bg-[#1B8FCB] text-white">
-                  <Icon name="telegram" size="sm" />
-                  <span className="text-xs font-bold">Telegram</span>
+            )}
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
+              <a href={`tel:${load.contact_phone}`} className="contents">
+                <Button className="w-full gap-2 rounded-xl h-11" variant="outline">
+                  <Icon name="phoneVolume" size="sm" className="text-primary" />
+                  <span className="text-xs font-bold truncate">{load.contact_phone}</span>
                 </Button>
               </a>
-            ) : (
-              <Button className="w-full gap-2 rounded-xl h-11" variant="outline" onClick={() => navigate(`/chat/${load.id}`)}>
-                <Icon name="commentDots" size="sm" className="text-primary" />
-                <span className="text-xs font-bold">Yozish</span>
-              </Button>
-            )}
-          </div>
-        </motion.div>
+              {load.telegram ? (
+                <a href={`https://t.me/${load.telegram.replace("@", "")}`} target="_blank" rel="noreferrer" className="contents">
+                  <Button className="w-full gap-2 rounded-xl h-11 bg-[#229ED9] hover:bg-[#1B8FCB] text-white">
+                    <Icon name="telegram" size="sm" />
+                    <span className="text-xs font-bold">Telegram</span>
+                  </Button>
+                </a>
+              ) : (
+                <Button className="w-full gap-2 rounded-xl h-11" variant="outline" onClick={() => navigate(`/chat/${load.id}`)}>
+                  <Icon name="commentDots" size="sm" className="text-primary" />
+                  <span className="text-xs font-bold">Yozish</span>
+                </Button>
+              )}
+            </div>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Bottom CTA */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 pb-6 pt-3 bg-gradient-to-t from-background via-background/95 to-background/0 backdrop-blur z-20">
+      {/* Bottom CTA — fixed on mobile, inline on desktop (because sidebar takes space) */}
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 pb-6 pt-3 bg-gradient-to-t from-background via-background/95 to-background/0 backdrop-blur z-20
+                      lg:static lg:left-auto lg:translate-x-0 lg:max-w-none lg:w-full lg:px-0 lg:pb-0 lg:pt-3 lg:bg-transparent lg:backdrop-blur-0 lg:mt-4">
         <div className="flex gap-2">
           <Button
             variant="outline"

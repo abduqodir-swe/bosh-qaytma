@@ -173,7 +173,7 @@ export default function PostLoadPage() {
   }
 
   return (
-    <div className="px-4 py-4 space-y-4">
+    <div className="px-4 lg:px-0 py-4 space-y-4">
       {/* Progress */}
       <div className="space-y-2">
         <div className="flex items-center gap-2">

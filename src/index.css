@@ -432,4 +432,17 @@
       linear-gradient(to bottom, hsl(var(--muted-foreground) / 0.05) 1px, transparent 1px);
     background-size: 24px 24px;
   }
+  /* Static form step — use on containers that hold controlled inputs.
+     Disables all transforms/transitions/animations on the wrapper AND
+     its descendants so re-renders triggered by typing into an input
+     never cause flicker. Kept for future use; not currently applied. */
+  .form-step-static {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  .form-step-static > *,
+  .form-step-static * {
+    transform: none !important;
+  }
 }

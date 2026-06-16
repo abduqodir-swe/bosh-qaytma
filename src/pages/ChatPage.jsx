@@ -78,7 +78,7 @@ export default function ChatPage() {
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-56px-72px)]">
+    <div className="flex flex-col h-[calc(100vh-56px-72px)] lg:h-[calc(100vh-2rem)]">
       {/* Chat header */}
       <div className="bg-card/90 backdrop-blur-md border-b border-border/60 px-4 py-3 flex items-center gap-3 sticky top-14 z-10 shadow-sm">
         <button onClick={() => navigate(-1)} className="w-9 h-9 rounded-xl bg-muted flex items-center justify-center press">

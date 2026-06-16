@@ -26,7 +26,7 @@ export default function FilterBar({ filters, onChange }) {
   };
 
   return (
-    <div className="flex gap-2 px-4 py-3 bg-card/80 backdrop-blur-md border-b border-border/60 sticky top-14 z-20">
+    <div className="flex gap-2 px-4 lg:px-0 py-3 bg-card/80 backdrop-blur-md border-b border-border/60 sticky top-14 lg:top-0 z-20">
       {/* Quick city search */}
       <div className="flex-1 relative">
         <div className="absolute left-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center">

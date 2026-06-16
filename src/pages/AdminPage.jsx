@@ -160,7 +160,7 @@ export default function AdminPage() {
   });
 
   return (
-    <div className="px-4 py-4 pb-24 space-y-4">
+    <div className="px-4 lg:px-0 py-4 pb-24 lg:pb-8 space-y-4">
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-xl font-extrabold text-foreground flex items-center gap-2">
@@ -200,7 +200,7 @@ export default function AdminPage() {
 
         {/* OVERVIEW */}
         <TabsContent value="overview" className="space-y-3 mt-4">
-          <div className="grid grid-cols-2 gap-2.5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
             {topStats.map(({ icon, label, value, color, text }, i) => (
               <motion.div
                 key={label}
