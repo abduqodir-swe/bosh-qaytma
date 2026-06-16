@@ -1,0 +1,31 @@
+{
+  "name": "DeletedLoad",
+  "type": "object",
+  "properties": {
+    "original_id": {
+      "type": "string",
+      "description": "Original Load entity ID"
+    },
+    "deleted_by_id": {
+      "type": "string",
+      "description": "ID of user who deleted the item"
+    },
+    "deleted_by_name": {
+      "type": "string",
+      "description": "Name of user who deleted the item"
+    },
+    "deletion_time": {
+      "type": "string",
+      "description": "ISO timestamp of deletion"
+    },
+    "original_data": {
+      "type": "string",
+      "description": "Full JSON snapshot of the original Load record"
+    }
+  },
+  "required": [
+    "original_id",
+    "deleted_by_id",
+    "original_data"
+  ]
+}

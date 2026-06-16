@@ -1,0 +1,46 @@
+{
+  "name": "LoadApplication",
+  "type": "object",
+  "properties": {
+    "load_id": {
+      "type": "string",
+      "description": "Yuk e'loni ID"
+    },
+    "driver_id": {
+      "type": "string",
+      "description": "Haydovchi ID"
+    },
+    "driver_name": {
+      "type": "string",
+      "description": "Haydovchi ismi"
+    },
+    "driver_phone": {
+      "type": "string",
+      "description": "Haydovchi telefoni"
+    },
+    "message": {
+      "type": "string",
+      "description": "Xabar"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "accepted",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Holat"
+    },
+    "offered_price": {
+      "type": "number",
+      "description": "Taklif narxi"
+    }
+  },
+  "required": [
+    "load_id",
+    "driver_id",
+    "driver_name",
+    "driver_phone"
+  ]
+}

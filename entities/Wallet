@@ -1,0 +1,35 @@
+{
+  "name": "Wallet",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "User ID"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "User full name"
+    },
+    "user_phone": {
+      "type": "string",
+      "description": "User phone"
+    },
+    "balance": {
+      "type": "number",
+      "default": 0,
+      "description": "Kredit balansi"
+    },
+    "premium_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "Premium obuna faolmi"
+    },
+    "premium_expires": {
+      "type": "string",
+      "description": "Premium tugash sanasi"
+    }
+  },
+  "required": [
+    "user_id"
+  ]
+}

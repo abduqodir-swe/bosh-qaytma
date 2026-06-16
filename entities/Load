@@ -1,0 +1,138 @@
+{
+  "name": "Load",
+  "type": "object",
+  "properties": {
+    "from_location": {
+      "type": "string",
+      "description": "Yuklanish joyi (shahar/viloyat)"
+    },
+    "to_location": {
+      "type": "string",
+      "description": "Yetkazish joyi (shahar/viloyat)"
+    },
+    "cargo_type": {
+      "type": "string",
+      "enum": [
+        "qurilish_materiallari",
+        "oziq_ovqat",
+        "mebel",
+        "elektronika",
+        "kimyo",
+        "qishloq_xojaligi",
+        "tekstil",
+        "avtomobil_qismlari",
+        "boshqa"
+      ],
+      "description": "Yuk turi"
+    },
+    "weight": {
+      "type": "number",
+      "description": "Yuk og'irligi (tonna)"
+    },
+    "volume": {
+      "type": "number",
+      "description": "Yuk hajmi (m\u00b3)"
+    },
+    "price": {
+      "type": "number",
+      "description": "Narx (so'm yoki dollar)"
+    },
+    "currency": {
+      "type": "string",
+      "enum": [
+        "UZS",
+        "USD"
+      ],
+      "default": "USD",
+      "description": "Valyuta"
+    },
+    "contact_name": {
+      "type": "string",
+      "description": "Aloqa uchun ism"
+    },
+    "contact_phone": {
+      "type": "string",
+      "description": "Telefon raqami"
+    },
+    "telegram": {
+      "type": "string",
+      "description": "Telegram username"
+    },
+    "transport_type": {
+      "type": "string",
+      "enum": [
+        "tentli",
+        "ref",
+        "bort",
+        "konteyner",
+        "evakuator",
+        "izoterm",
+        "har_qanday"
+      ],
+      "description": "Transport turi"
+    },
+    "description": {
+      "type": "string",
+      "description": "Qo'shimcha ma'lumot"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "closed",
+        "in_progress"
+      ],
+      "default": "active",
+      "description": "Holat"
+    },
+    "shipper_id": {
+      "type": "string",
+      "description": "Yuk beruvchi ID"
+    },
+    "shipper_name": {
+      "type": "string",
+      "description": "Yuk beruvchi ismi"
+    },
+    "load_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Yuklanish sanasi"
+    },
+    "views": {
+      "type": "number",
+      "default": 0,
+      "description": "Ko'rishlar soni"
+    },
+    "is_vip": {
+      "type": "boolean",
+      "default": false,
+      "description": "VIP (Tanlangan) e'lon"
+    },
+    "is_highlight": {
+      "type": "boolean",
+      "default": false,
+      "description": "Ajralib turish (rangli)"
+    },
+    "is_pin": {
+      "type": "boolean",
+      "default": false,
+      "description": "Tepada turish"
+    },
+    "is_urgent": {
+      "type": "boolean",
+      "default": false,
+      "description": "Shoshilinch e'lon"
+    },
+    "priority_score": {
+      "type": "number",
+      "default": 0,
+      "description": "Ustuvorlik bali (katta = yuqoriroq)"
+    }
+  },
+  "required": [
+    "from_location",
+    "to_location",
+    "cargo_type",
+    "contact_phone"
+  ]
+}

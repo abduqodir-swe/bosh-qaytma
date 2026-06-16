@@ -1,0 +1,37 @@
+{
+  "name": "AppUser",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "To'liq ism"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Telefon raqami"
+    },
+    "password_hash": {
+      "type": "string",
+      "description": "Parol (hash)"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "user",
+        "admin"
+      ],
+      "default": "user",
+      "description": "Rol"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Faolmi"
+    }
+  },
+  "required": [
+    "full_name",
+    "phone",
+    "password_hash"
+  ]
+}

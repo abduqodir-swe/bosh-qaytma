@@ -1,0 +1,56 @@
+{
+  "name": "AdminNotification",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Foydalanuvchi ID"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Foydalanuvchi ismi"
+    },
+    "user_phone": {
+      "type": "string",
+      "description": "Foydalanuvchi telefoni"
+    },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "credit_purchase",
+        "vip_purchase",
+        "highlight_purchase",
+        "pin_purchase",
+        "premium_purchase"
+      ],
+      "description": "Xarid turi"
+    },
+    "item_label": {
+      "type": "string",
+      "description": "Sotib olingan narsa nomi"
+    },
+    "credits_spent": {
+      "type": "number",
+      "description": "Sarflangan kreditlar"
+    },
+    "credits_added": {
+      "type": "number",
+      "description": "Qo'shilgan kreditlar"
+    },
+    "demo_amount": {
+      "type": "string",
+      "description": "Demo pul miqdori (so'm)"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false,
+      "description": "O'qilganmi"
+    }
+  },
+  "required": [
+    "user_id",
+    "user_name",
+    "action_type",
+    "item_label"
+  ]
+}

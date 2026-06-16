@@ -1,0 +1,70 @@
+{
+  "name": "DriverProfile",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "User ID"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "To'liq ism"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Telefon raqami"
+    },
+    "telegram": {
+      "type": "string",
+      "description": "Telegram username"
+    },
+    "truck_type": {
+      "type": "string",
+      "enum": [
+        "tentli",
+        "ref",
+        "bort",
+        "konteyner",
+        "evakuator",
+        "izoterm"
+      ],
+      "description": "Mashina turi"
+    },
+    "capacity": {
+      "type": "number",
+      "description": "Yuk ko'tarish quvvati (tonna)"
+    },
+    "current_location": {
+      "type": "string",
+      "description": "Hozirgi joylashuv"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Bosh yo'nalish"
+    },
+    "license_plate": {
+      "type": "string",
+      "description": "Davlat raqami"
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Tasdiqlangan"
+    },
+    "rating": {
+      "type": "number",
+      "default": 0,
+      "description": "Reyting"
+    },
+    "trips_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Safarlar soni"
+    }
+  },
+  "required": [
+    "full_name",
+    "phone",
+    "truck_type"
+  ]
+}

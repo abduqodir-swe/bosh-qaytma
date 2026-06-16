@@ -1,0 +1,41 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "load_id": {
+      "type": "string",
+      "description": "Yuk e'loni ID"
+    },
+    "sender_id": {
+      "type": "string",
+      "description": "Yuboruvchi user ID"
+    },
+    "sender_name": {
+      "type": "string",
+      "description": "Yuboruvchi ismi"
+    },
+    "sender_role": {
+      "type": "string",
+      "enum": [
+        "driver",
+        "shipper"
+      ],
+      "description": "Yuboruvchi roli"
+    },
+    "text": {
+      "type": "string",
+      "description": "Xabar matni"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false,
+      "description": "O'qilganmi"
+    }
+  },
+  "required": [
+    "load_id",
+    "sender_id",
+    "sender_name",
+    "text"
+  ]
+}
